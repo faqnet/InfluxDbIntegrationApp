@@ -111,6 +111,7 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
+
     public void showToast(final String toast) {
         runOnUiThread(() -> Toast.makeText(MainActivity.this, toast, Toast.LENGTH_SHORT)
                 .show());
@@ -148,6 +149,17 @@ public class MainActivity extends AppCompatActivity {
         // Inflate the menu; this adds items to the action bar if it is present.
         getMenuInflater().inflate(R.menu.menu_main, menu);
         return true;
+    }
+
+    @Override
+    protected void onPause() {
+
+        super.onPause();
+        if (metric != null && metric.getValues()
+                .size() > 0) {
+            sendTestDataToInflux(metric);
+        }
+
     }
 
     @Override
