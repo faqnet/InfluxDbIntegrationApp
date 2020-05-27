@@ -87,7 +87,8 @@ public class MainActivity extends AppCompatActivity {
                                         3),
                         new LocationData(1,
                                          2),
-                        10,
+                        // timestamp
+                        (int) (System.currentTimeMillis() / 1000),
                         "robin");
                 // add data to datapoint list
                 metric.getValues()
