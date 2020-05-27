@@ -98,6 +98,7 @@ public class MainActivity extends AppCompatActivity {
             }
         };
 
+        // 5 * (60*1000) -> 5 minutes
         taskTimer.scheduleAtFixedRate(sendToInfluxTask, 0l, 10000);
         taskTimer.scheduleAtFixedRate(receiveTask, 0l, 1000);
 
