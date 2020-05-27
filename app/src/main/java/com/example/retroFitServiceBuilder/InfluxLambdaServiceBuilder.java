@@ -7,7 +7,7 @@ import retrofit2.converter.gson.GsonConverterFactory;
 public class InfluxLambdaServiceBuilder {
 
     private static Retrofit retrofit;
-    private static final String BASE_URL = "base url";
+    private static final String BASE_URL = "base_url";
 
     public static Retrofit getRetrofitInstance() {
         if (retrofit == null) {
@@ -20,3 +20,4 @@ public class InfluxLambdaServiceBuilder {
 
     }
 }
+
